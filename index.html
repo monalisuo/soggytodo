@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoggyTodo - 简洁待办清单</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-check-circle"></i>
+                <h1>SoggyTodo</h1>
+            </div>
+            <p class="subtitle">简洁高效的待办清单</p>
+        </header>
+
+        <main class="main">
+            <div class="input-section">
+                <div class="input-group">
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="添加新任务..."
+                        autocomplete="off"
+                        aria-label="新任务输入框"
+                    >
+                    <button id="addBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        <span>添加</span>
+                    </button>
+                </div>
+                <p class="hint">按 Enter 键快速添加任务</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">总任务</span>
+                    <span id="totalTasks" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">已完成</span>
+                    <span id="completedTasks" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">待完成</span>
+                    <span id="pendingTasks" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <div class="tasks-container">
+                <div class="tasks-header">
+                    <h2>我的任务</h2>
+                    <div class="actions">
+                        <button id="clearCompleted" class="btn btn-text">
+                            <i class="fas fa-trash-alt"></i>
+                            <span>清除已完成</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="tasksList" class="tasks-list">
+                    <!-- 任务将动态添加到这里 -->
+                    <div class="empty-state">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>暂无任务</h3>
+                        <p>添加你的第一个待办事项吧！</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2026 SoggyTodo | 数据保存在本地浏览器中</p>
+            <div class="theme-toggle">
+                <button id="themeToggle" class="btn btn-text" aria-label="切换主题">
+                    <i class="fas fa-moon"></i>
+                    <span>深色模式</span>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
